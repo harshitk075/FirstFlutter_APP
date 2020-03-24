@@ -4,7 +4,15 @@ void main() => runApp(MaterialApp(
    home: Idapp() ,
 ));
 
-class Idapp extends StatelessWidget {
+class Idapp extends StatefulWidget {
+  @override
+  _IdappState createState() => _IdappState();
+}
+
+class _IdappState extends State<Idapp> {
+
+  //In this area i declare variables
+  int Fanfollowing=10000;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +61,23 @@ class Idapp extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30.0),
+            Text(
+              "Fan Following",
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 5.0),
+            Text(
+              "$Fanfollowing",
+              style: TextStyle(
+                color: Colors.amberAccent,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
             Row(
               children: <Widget>[
                 Icon(
@@ -77,6 +102,17 @@ class Idapp extends StatelessWidget {
               ),
             )
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            Fanfollowing+=1223;
+          });
+        },
+        backgroundColor: Colors.grey[800],
+        child: Icon(Icons.add,
+        size: 30.0,
         ),
       ),
     );
